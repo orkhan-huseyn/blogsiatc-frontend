@@ -1,15 +1,15 @@
-import { useEffect, useRef } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { Form, Input, Button } from 'antd';
-import { SendOutlined } from '@ant-design/icons';
+import { useEffect, useRef } from "react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Form, Input, Button } from "antd";
+import { SendOutlined } from "@ant-design/icons";
 import {
   fetchMessages,
   markAllAsRead,
   newMessage,
-} from 'redux/features/chatSlice';
-import socket from 'lib/io';
-import './styles.css';
+} from "redux/features/chatSlice";
+import socket from "lib/io";
+import "./styles.css";
 
 function Inbox() {
   const messageListRef = useRef();
@@ -29,8 +29,9 @@ function Inbox() {
   };
 
   useEffect(() => {
-    socket.emit('join room', userId);
+    socket.emit("join room", userId);
     dispatch(fetchMessages(userId));
+    // eslint-disable-next-line
   }, [userId]);
 
   useEffect(() => {
@@ -38,6 +39,7 @@ function Inbox() {
     if (chatUser && chatUser.unreadMessages > 0) {
       dispatch(markAllAsRead(userId));
     }
+    // eslint-disable-next-line
   }, [userId, chatUsers]);
 
   useEffect(() => {
@@ -45,7 +47,7 @@ function Inbox() {
   }, [messages]);
 
   function sendMessage({ content }) {
-    socket.emit('send message', { userId, content });
+    socket.emit("send message", { userId, content });
     const message = {
       id: Math.random(),
       content,
@@ -62,7 +64,7 @@ function Inbox() {
         {messages?.map((message) => (
           <li
             className={`message-container${
-              message.fromMyself ? ' right' : ' left'
+              message.fromMyself ? " right" : " left"
             }`}
             key={message.id}
           >
@@ -72,7 +74,7 @@ function Inbox() {
       </ul>
       <Form
         form={form}
-        style={{ paddingLeft: '24px' }}
+        style={{ paddingLeft: "24px" }}
         layout="inline"
         onFinish={sendMessage}
       >
@@ -80,7 +82,7 @@ function Inbox() {
           style={{ flexGrow: 1 }}
           name="content"
           rules={[
-            { required: true, message: 'Please write something to send' },
+            { required: true, message: "Please write something to send" },
           ]}
         >
           <Input.TextArea placeholder="Send message..."></Input.TextArea>
