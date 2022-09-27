@@ -1,0 +1,18 @@
+.chat-container {
+  display: flex;
+}
+
+.chat-container .users {
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  flex-basis: 30%;
+}
+
+.chat-container .users .active {
+  /* background-color: rgb(144, 144, 144); */
+  display: block;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.chat-container .inbox {
+  flex-basis: 70%;
+}

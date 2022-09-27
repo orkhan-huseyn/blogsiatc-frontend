@@ -1,0 +1,35 @@
+.message-list {
+  list-style: none;
+  padding: 0 0 0 24px;
+  margin: 0 0 20px 0;
+  height: 400px;
+  overflow-y: scroll;
+}
+
+.message-container {
+  display: flex;
+}
+
+.message-container.right {
+  justify-content: flex-end;
+}
+
+.message-container.left {
+  justify-content: flex-start;
+}
+
+.message-box {
+  padding: 10px 24px;
+  margin-bottom: 5px;
+}
+
+.right .message-box {
+  background: #f8fafb;
+  border-radius: 10px 10px 0px 10px;
+}
+
+.left .message-box {
+  background: #0081ff;
+  border-radius: 10px 10px 10px 0px;
+  color: white;
+}

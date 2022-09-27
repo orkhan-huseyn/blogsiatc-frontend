@@ -1,0 +1,39 @@
+.app-layout .site-layout-content {
+  min-height: 75vh;
+  padding: 24px;
+  background: #fff;
+}
+
+.app-layout .user-info .ant-space-item {
+  color: #fff;
+}
+
+.app-layout .app-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.app-layout .app-navigation {
+  margin-right: auto;
+}
+
+.app-layout .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.ant-row-rtl .app-layout .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.app-layout .app-content {
+  padding: 0 50px;
+}
+
+.app-layout .app-breadcrumb {
+  padding: 16px 0;
+}

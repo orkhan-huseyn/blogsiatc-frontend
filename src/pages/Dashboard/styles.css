@@ -1,0 +1,13 @@
+.dashboard-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-container .ant-list-item-meta-title {
+  margin-bottom: 0 !important;
+}
+
+.dashboard-container .ant-list-item-meta {
+  display: flex;
+  align-items: center;
+}
